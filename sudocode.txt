@@ -1,0 +1,10 @@
+<!-- The first thing to do is to display a button that will start the quiz and a paragraph that will describe the quiz -->
+When you click the start you want the quiz to start with the first question -->The quiz will have a timer with 15 seconds per question.  -->
+Questions should be in a random order each time to make the quiz redoable  -->
+the score should be a fraction out of the number of questions plus a time bonus that is calulated. -->
+
+When you select the correct answer to the question you should animate the page to indicate a correct answer
+the opposite should happen when you select a wrong answer -->
+<!-- when you click any answer after the animantion you will display the next Question -->
+<!-- You may wamt to scramble the answers too to actually make this quiz repeatable.
+you could even make one of the wrong answers random from an arroy of wrong andwers only -->

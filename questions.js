@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",
@@ -11,3 +13,8 @@ var questions = [
     },
     
   ];
+  var quizButton = $(".startQuiz");
+  quizButton.click(function(){
+    alert("You have started the Quiz");
+  });
+});

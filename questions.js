@@ -54,26 +54,45 @@ var questions = [
     },
     
   ];
-  console.log(questions[0].title);
+
   var quizButton = $(".startQuiz");
   quizButton.click(function(){
     // alert("You have started the Quiz");
-    var i = questions.length
-    $("#question").html(questions[0].title); 
-    $(".startQuiz").html(questions[0].choices[0])
+    var questionNumber = 0; 
+    for(i=0;i<questions.length;i++){
+    console.log(questions[questionNumber].choices);
+    $("#question").html(questions[questionNumber].title);
     
-    $(".choicesBtn").html("new buttons")
-    $(".lead").append( "<button class='btn btn-primary btn-lg choicesBtn' role='button'>Start Quiz!</button>")
+    choices = questions[i].choices;
+    
+    
+    
+    
+    $(".startQuiz").remove();
+    $(".lead").append( "<button class='btn btn-primary btn-lg choicesBtn' role='button'></button>")
+    $(".choicesBtn").html(questions[questionNumber].choices);
+  
+
+  }
+    // $("#question").html(questions[0].title); 
+    // $(".startQuiz").html(questions[0].choices[0])
+    
+    // $(".choicesBtn").html("new buttons")
+    // $(".lead").append( "<button class='btn btn-primary btn-lg choicesBtn' role='button'></button>")
     
     
 
 
   });
   // function displayAnswers(){
-  //   var choices = 
+  //   var choices =  questions[i].choices;
   //   for(i=0: i<choices.length; i++){
 
   //   }
+  // }
+
+  // function startTimer(){
+
   // }
 });
 

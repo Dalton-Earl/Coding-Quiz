@@ -55,25 +55,28 @@ var questions = [
     
   ];
 
-  var quizButton = $(".startQuiz");
+  var quizButton = $(".startQuiz",);
   quizButton.click(function(){
     // alert("You have started the Quiz");
     var questionNumber = 0; 
-    for(i=0;i<questions.length;i++){
+    
     console.log(questions[questionNumber].choices);
     $("#question").html(questions[questionNumber].title);
     
-    choices = questions[i].choices;
+    choices = questions[questionNumber].choices;
     
     
     
     
+    var choicesBtnEl = $(".choicesBtn")
+
     $(".startQuiz").remove();
     $(".lead").append( "<button class='btn btn-primary btn-lg choicesBtn' role='button'></button>")
-    $(".choicesBtn").html(questions[questionNumber].choices);
+    for(var i = 0; i<questions[questionNumber].choices.length; i++){
+    $(".choicesBtn").text(questions[questionNumber].choices[i]);
+    }
+    questionNumber++;
   
-
-  }
     // $("#question").html(questions[0].title); 
     // $(".startQuiz").html(questions[0].choices[0])
     

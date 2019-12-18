@@ -19,12 +19,12 @@ var questions = [
     },
     {
       title: "4The condition in an if / else statement is enclosed within ____.",
-      choices: ["4quotes", "curly brackets", "parentheses", "square brackets"],
+      choices: ["4quotes", "curly brackets", "parentheses"],
       answer: "4parentheses"
     },
     {
       title: "5Commonly used data types DO NOT include:",
-      choices: ["5strings", "booleans", "alerts", "numbers"],
+      choices: ["5strings", "booleans", ],
       answer: "5alerts"
     },
     {
@@ -56,43 +56,41 @@ var questions = [
   ];
 
   var quizButton = $(".startQuiz",);
-  quizButton.click(function(){
-    // alert("You have started the Quiz");
-    var questionNumber = 0; 
-    
-    console.log(questions[questionNumber].choices);
-    $("#question").html(questions[questionNumber].title);
-    
-    choices = questions[questionNumber].choices;
-    
-    
-    
-    
-    var choicesBtnEl = $(".choicesBtn")
-
-    $(".startQuiz").remove();
-    $(".lead").append( "<button class='btn btn-primary btn-lg choicesBtn' role='button'></button>")
-    for(var i = 0; i<questions[questionNumber].choices.length; i++){
-    $(".choicesBtn").text(questions[questionNumber].choices[i]);
-    }
-    questionNumber++;
   
-    // $("#question").html(questions[0].title); 
-    // $(".startQuiz").html(questions[0].choices[0])
-    
-    // $(".choicesBtn").html("new buttons")
-    // $(".lead").append( "<button class='btn btn-primary btn-lg choicesBtn' role='button'></button>")
-    
-    
+  var qN = 0;
 
-
+  function displayAnswers(){
+    var questionChoice = questions[qN].choices.length;
+    for(var i = 0; i<questionChoice;i++){
+      console.log(questionChoice);
+      $(".startQuiz").remove();
+      $(".lead").append(` <button class="btn btn-primary btn-lg answerBtn" role="button">${questions[qN].choices[i]}</button>`);
+      
+    }
+  
+    }
+  
+  quizButton.click(function(){
+    if(questions.length > qN ){
+    
+      // console.log(qN);
+      // console.log(questions.length);
+      $("#question").html(questions[qN].title);
+      
+      } else {
+        $("#question").html("the quiz is done!")
+        //run a function that displays the quiz score in this statement. 
+      }
+   displayAnswers();
+    qN++;
   });
-  // function displayAnswers(){
-  //   var choices =  questions[i].choices;
-  //   for(i=0: i<choices.length; i++){
+ 
+  
+   console.log(answerButton);
+  $(".answerBtn").click(function(){
+  alert("clickin an answers")
 
-  //   }
-  // }
+});
 
   // function startTimer(){
 

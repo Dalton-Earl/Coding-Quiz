@@ -58,6 +58,8 @@ var questions = [
   var quizButton = $(".startQuiz",);
   
   var qN = 0;
+  var timerEl = $(".timer");
+  var timeLeft = questions.length * 15;
 
   function displayAnswers(){
     var questionChoice = questions[qN].choices.length;
@@ -74,8 +76,10 @@ var questions = [
 
       
       displayQuestions();
-
+     
       displayAnswers();
+      var answer = this;
+      console.log(answer.text());
     });
   
     }
@@ -83,30 +87,43 @@ var questions = [
       
       if(questions.length > qN ){
         
-        // console.log(qN);
-        // console.log(questions.length);
         $("#question").html(questions[qN].title);
         
-        } else {
-          $("#question").html("the quiz is done!")
-          //run a function that displays the quiz score in this statement. 
+        } 
+        else {
+          $("#question").html("the quiz is done!");
+          //run a function that displays the quiz score in this statement.
+          timerEl.html("the quiz is done!"); 
         }
         
     }
+    function startTimer() {
+      
+      console.log(timeLeft)
+    
+      var timeInterval = setInterval(function() {
+        timerEl.text( timeLeft + " seconds remaining")
+        timeLeft--;
+    
+        if (timeLeft === 0 ) {
+          timerEl.text("");
+          clearInterval(timeInterval);
+        }
+        
+    
+      }, 1000);
+    }
     
   quizButton.click(function(){
+   
    displayQuestions();
    displayAnswers();
-   
+   startTimer();
     
     
       
   });
  
-
-  // function startTimer(){
-
-  // }
 });
 
 

@@ -60,12 +60,13 @@ var questions = [
   var qN = 0;
   var timerEl = $(".timer");
   var timeLeft = questions.length * 15;
+  var score = 0;
 
   function displayAnswers(){
     var questionChoice = questions[qN].choices.length;
     
     for(var i = 0; i<questionChoice;i++){
-      console.log(questionChoice);
+      // console.log(questionChoice);
       $(".startQuiz").remove();
       $(".lead").append(` <button class="btn btn-primary btn-lg answerBtn" role="button">${questions[qN].choices[i]}</button>`);
       
@@ -78,8 +79,11 @@ var questions = [
       displayQuestions();
      
       displayAnswers();
-      var answer = this;
-      console.log(answer.text());
+      var answerIn = $(this).text();
+      if(questions[qN].answer === answerIn)
+      score++
+      console.log(score);
+      
     });
   
     }

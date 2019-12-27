@@ -56,7 +56,7 @@ var questions = [
   ];
 
   var quizButton = $(".startQuiz",);
-  
+  var saveButton = $(".saveBtn");
   var qN = 0;
   var timerEl = $(".timer");
   var timeLeft = questions.length * 15;
@@ -106,7 +106,8 @@ var questions = [
           var scoreMultiplier = timeLeft;
           timerEl.remove();
           score = score * scoreMultiplier;
-          $("#question").html(`Your score is ${score}`); 
+          $("#question").html(`Your score is ${score}`);
+          $(".lead").append(` <button class="btn btn-primary btn-lg saveBtn" role="button">Save Your Score</button>`); 
         }
         
     }
@@ -126,6 +127,9 @@ var questions = [
     
       }, 1000);
     }
+  saveButton.click(function(){
+    alert("saved!")
+  })  
     
   quizButton.click(function(){
    

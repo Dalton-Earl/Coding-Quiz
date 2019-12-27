@@ -71,39 +71,48 @@ var questions = [
       $(".lead").append(` <button class="btn btn-primary btn-lg answerBtn" role="button">${questions[qN].choices[i]}</button>`);
       
     }
+    console.log()
     qN++;
     $(".answerBtn").click(function(){
       $(".lead").empty();
 
       
       displayQuestions();
-     
-      displayAnswers();
-      var answerIn = $(this).text();
-      if(questions[qN].answer === answerIn)
-      score++
-      console.log(score);
       
+      displayAnswers();
+      
+      var answerIn = $(this).text();
+      if(questions[qN].answer === answerIn){
+      score++
+      }
+      else{
+        
+      }
+       console.log(score);
+       
     });
   
     }
     function displayQuestions(){
-      
+     
       if(questions.length > qN ){
         
         $("#question").html(questions[qN].title);
         
         } 
         else {
-          $("#question").html("the quiz is done!");
+          
           //run a function that displays the quiz score in this statement.
-          timerEl.html("the quiz is done!"); 
+          var scoreMultiplier = timeLeft;
+          timerEl.remove();
+          score = score * scoreMultiplier;
+          $("#question").html(`Your score is ${score}`); 
         }
         
     }
     function startTimer() {
       
-      console.log(timeLeft)
+      // console.log(timeLeft)
     
       var timeInterval = setInterval(function() {
         timerEl.text( timeLeft + " seconds remaining")

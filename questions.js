@@ -3,60 +3,56 @@ $(document).ready(function () {
 
 var questions = [
     {
-      title: "1Commonly used data types DO NOT include:",
-      choices: ["1strings", "booleans", "alerts", "numbers"],
+      title: "Commonly used data types DO NOT include:",
+      choices: ["strings", "booleans", "alerts", "numbers"],
       answer: "alerts"
     },
     {
-      title: "2The condition in an if / else statement is enclosed within ____.",
-      choices: ["2quotes", "curly brackets", "parentheses", "square brackets"],
+      title: "The condition in an if / else statement is enclosed within ____.",
+      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
       answer: "parentheses"
     },
     {
-      title: "3Commonly used data types DO NOT include:",
-      choices: ["3strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "Inline CSS Applies a unique style over:",
+      choices: ["single element", "multiple elements", "everything on document", "everything after the CSS"],
+      answer: "single element"
     },
     {
-      title: "4The condition in an if / else statement is enclosed within ____.",
-      choices: ["4quotes", "curly brackets", "parentheses"],
-      answer: "parentheses"
+      title: "In HTML the element defining a table row is:",
+      choices: ["tablerow", "tabr", "tr","trow"],
+      answer: "trow"
     },
     {
-      title: "5Commonly used data types DO NOT include:",
-      choices: ["5strings", "booleans", ],
-      answer: "alerts"
+      title: "What Symbol is used in Jquery?",
+      choices: ["%", "$","#","@" ],
+      answer: "$"
     },
     {
-      title: "6The condition in an if / else statement is enclosed within ____.",
-      choices: ["6quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "How do you declare a text document as HTML?",
+      choices: [`!doctype html`, "var Doctype = html", "Document.HTML", "This is HTML"],
+      answer: "!doctype html"
     },
     {
-      title: "7Commonly used data types DO NOT include:",
-      choices: ["7strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "Where do you put elements you want to display",
+      choices: ["head", "script", "body", "html"],
+      answer: "body"
     },
     {
-      title: "8The condition in an if / else statement is enclosed within ____.",
-      choices: ["8quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "How do you link to an external CSS style sheet?",
+      choices: ["Link = CSS", "stylesheet = style.css", "href>style.css<href", `link rel="stylesheet" href="style.css"`],
+      answer: `link rel="stylesheet" href="style.css"`
     },
     {
-      title: "9Commonly used data types DO NOT include:",
-      choices: ["9strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "When you have an array What is the best way to do work through it?",
+      choices: ["fruit loops", "for loops", "how loops", "do while loops"],
+      answer: "for loops"
     },
-    {
-      title: "10The condition in an if / else statement is enclosed within ____.",
-      choices: ["10quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
-    },
+    
     
   ];
 
   var quizButton = $(".startQuiz",);
-  var saveButton = $(".saveBtn");
+  
   var qN = 0;
   var timerEl = $(".timer");
   var timeLeft = questions.length * 15;
@@ -91,6 +87,7 @@ var questions = [
        console.log(score);
        
     });
+    
   
     }
     function displayQuestions(){
@@ -127,9 +124,9 @@ var questions = [
     
       }, 1000);
     }
-  saveButton.click(function(){
+    $(".saveBtn").click(function(){
     alert("saved!")
-  })  
+  });  
     
   quizButton.click(function(){
    
@@ -140,6 +137,7 @@ var questions = [
     
       
   });
+  
  
 });
 
